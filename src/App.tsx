@@ -9,7 +9,7 @@ function App() {
   const changeNumbers = () => {
     const newArr: number[] = [];
     for (let i = 0; newArr.length < 5; i++) {
-      let randomNumber = Math.floor(Math.random() * 32) + 5;
+      const randomNumber = Math.floor(Math.random() * 32) + 5;
       if (newArr.indexOf(randomNumber) === -1) {
         newArr.push(randomNumber);
       }
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <button onClick={changeNumbers}>New numbers</button>
+        <button onClick={changeNumbers} className="btn">New numbers</button>
       </div>
       <div className="wrapper">
         <Circle value={number[0]}/>
