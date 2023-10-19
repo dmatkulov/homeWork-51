@@ -3,19 +3,19 @@ import './App.css';
 import {useState} from 'react';
 
 function App() {
-  const [number, setNumber] = useState<number[]>([
+  const [numbers, setNumbers] = useState<number[]>([
     5, 11, 16, 23, 32]);
 
   const changeNumbers = () => {
-    const newArr: number[] = [];
-    for (let i = 0; newArr.length < 5; i++) {
+    const newNumbers: number[] = [];
+    for (let i = 0; i < numbers.length; i++) {
       const randomNumber = Math.floor(Math.random() * 32) + 5;
-      if (newArr.indexOf(randomNumber) === -1) {
-        newArr.push(randomNumber);
+      if (newNumbers.indexOf(randomNumber) === -1) {
+        newNumbers.push(randomNumber);
       }
     }
-    newArr.sort((a, b) => a - b);
-    setNumber(newArr);
+    newNumbers.sort((a, b) => a - b);
+    setNumbers(newNumbers);
   };
 
   return (
@@ -24,11 +24,11 @@ function App() {
         <button onClick={changeNumbers} className="btn">New numbers</button>
       </div>
       <div className="wrapper">
-        <Circle value={number[0]}/>
-        <Circle value={number[1]}/>
-        <Circle value={number[2]}/>
-        <Circle value={number[3]}/>
-        <Circle value={number[4]}/>
+        <Circle value={numbers[0]}/>
+        <Circle value={numbers[1]}/>
+        <Circle value={numbers[2]}/>
+        <Circle value={numbers[3]}/>
+        <Circle value={numbers[4]}/>
       </div>
     </div>
   );
