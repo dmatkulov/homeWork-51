@@ -8,8 +8,8 @@ function App() {
 
   const changeNumbers = () => {
     const newNumbers: number[] = [];
-    for (let i = 0; i < numbers.length; i++) {
-      const randomNumber = Math.floor(Math.random() * 32) + 5;
+    for (let i = 0; newNumbers.length < numbers.length; i++) {
+      const randomNumber: number = Math.floor(Math.random() * 32) + 5;
       if (newNumbers.indexOf(randomNumber) === -1) {
         newNumbers.push(randomNumber);
       }
