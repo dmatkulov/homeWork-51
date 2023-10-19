@@ -1,34 +1,29 @@
-import {useState} from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import Circle from './Circle/Circle';
 import './App.css';
+import {useState} from 'react';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [number, setNumber] = useState<number[]>([
+    5, 11, 16, 23, 32
+  ]);
+
+  const changeNumbers = () => {
+
+  }
 
   return (
-    <>
+    <div className="App">
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo"/>
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo"/>
-        </a>
+        <button>New numbers</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="wrapper">
+        <Circle value={number[0]}/>
+        <Circle value={number[1]}/>
+        <Circle value={number[2]}/>
+        <Circle value={number[3]}/>
+        <Circle value={number[4]}/>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   );
 }
 
